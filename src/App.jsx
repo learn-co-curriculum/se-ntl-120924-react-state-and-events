@@ -1,16 +1,18 @@
-import Greeting from './components/Greeting'
+import { useState } from 'react'
+// import Greeting from './components/Greeting'
 import Header from './components/Header'
 import ProjectsList from './components/ProjectsList'
 
 function App() {
+  const [isLightMode, setIsLightMode] = useState(false)
 
   return (
-    <div className='App'>
-      <Header />
-      <Greeting name="Laura" color="green"/>
-      <Greeting name="Enoch" color="blue"/>
-      <Greeting name="Aidan" color="red" />
-      <Greeting name="Adrian" color="orange"/>
+    <div className={isLightMode ? 'App light' : 'App'}>
+      <Header isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+      {/* <Greeting name="Laura" />
+      <Greeting name="Enoch" />
+      <Greeting name="Aidan" />
+      <Greeting name="Adrian" /> */}
       <ProjectsList />
     </div>
   )

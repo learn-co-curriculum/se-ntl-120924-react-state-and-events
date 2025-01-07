@@ -1,9 +1,15 @@
-const ProjectCard = ({name, about, phase, image, link}) => {
+import { useState } from "react"
+
+const ProjectCard = ({name, about, phase, image, link, claps}) => {
+    const [adjClaps, setAdjClaps] = useState(claps)
+
+    const handleClick = () => setAdjClaps(pC => pC + 1)
+
     return (
         <li className="card">
             <figure className="image">
-                <img style={{maxHeight: '200px'}} src={image} alt={name} />
-                <button className="claps">👏{0}</button>
+                <img src={image} alt={name} />
+                <button onClick={handleClick} className="claps">👏{adjClaps}</button>
             </figure>
 
             <section className="details">

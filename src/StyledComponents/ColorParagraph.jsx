@@ -1,6 +1,6 @@
 const ColorParagraph = (props) => {
     return (
-        <p style={{color: props.color}}>
+        <p onClick={props.handleClick} style={{color: props.color}}>
             {props.children}
         </p>
     )
